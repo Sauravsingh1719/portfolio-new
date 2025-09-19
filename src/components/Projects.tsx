@@ -46,7 +46,7 @@ export function Projects() {
     {
       title: "Library Website",
       description: "Dummy library website with book catalog and user management features.",
-      image: "/images/lib.png",
+      image: "/images/Lib.png",
       link: "https://myspacelib.vercel.app/",
       technologies: ["React", "CSS3", "JavaScript"]
     }
