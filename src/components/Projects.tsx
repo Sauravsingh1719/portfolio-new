@@ -30,11 +30,11 @@ export function Projects() {
       technologies: ["React", "CSS3", "JavaScript", "Framer Motion"]
     },
     {
-      title: "My First Portfolio",
+      title: "My Old Portfolio",
       description: "Responsive portfolio website with interactive elements and modern design principles.",
-      image: "/images/portfolio.png",
-      link: "https://saurav160.netlify.app/",
-      technologies: ["React", "Material UI", "Framer Motion", "EmailJS"]
+      image: "/images/oldport.png",
+      link: "https://saurav19.vercel.app/",
+      technologies: ["Next.js", "Accernity UI", "Nodemailer", "Shadcn UI"]
     },
     {
       title: "Negative Marks Calculator",
