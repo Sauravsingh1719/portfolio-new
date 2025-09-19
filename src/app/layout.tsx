@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 // Update this with your actual information
-const SITE_URL = "https://yourportfolio.com"; // Replace with your actual domain
+const SITE_URL = "https://saurav190.vercel.app/"; // Replace with your actual domain
 const TWITTER_HANDLE = "@yourhandle"; // Replace with your Twitter handle
 
 export const metadata: Metadata = {
@@ -104,8 +104,8 @@ export default function RootLayout({
               "url": SITE_URL,
               "image": `${SITE_URL}/profile-image.jpg`,
               "sameAs": [
-                "https://github.com/yourusername",
-                "https://linkedin.com/in/yourusername",
+                "https://github.com/Sauravsingh1719",
+                "www.linkedin.com/in/saurav-kumar-262219337",
                 "https://twitter.com/yourusername"
               ],
               "jobTitle": "Full Stack Developer",

@@ -98,17 +98,17 @@ export default function ContactPage() {
     {
       name: "GitHub",
       image: "/images/github.png", 
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Sauravsingh1719",
     },
     {
       name: "LinkedIn",
       image: "/images/linkedin.png", // Replace with your image path
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/saurav-kumar-262219337",
     },
     {
       name: "Instagram",
       image: "/images/instagram.jpg", // Replace with your image path
-      url: "https://instagram.com/yourusername",
+      url: "https://www.instagram.com/saurav.singh19__/",
     }
   ];
 

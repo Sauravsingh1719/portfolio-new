@@ -16,7 +16,7 @@ Contact Form: Functional contact form with validation
 Interactive Elements: Engaging user interactions throughout
 
 🛠️ Built With
-Next.js 14 - React framework with App Router
+Next.js 15.5 - React framework with App Router
 
 TypeScript - Type safety and better development experience
 
@@ -31,6 +31,6 @@ This project uses components and inspiration from these amazing libraries:
 
 Aceternity UI - Beautifully designed components and templates
 
-React Bits - Collection of React patterns, techniques, and tips
+React Bits - Beautifully designed components and templates
 
 Special thanks to the creators of these libraries for their excellent work and for sharing their knowledge with the community.
