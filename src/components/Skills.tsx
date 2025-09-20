@@ -44,7 +44,7 @@ export function Skills() {
     {
       title: "NextAuth",
       description: "Authentication and authorization solutions for Next.js applications.",
-      icon: "/images/nextauth.png",
+      icon: "/images/nextAuth.png",
     },
     {
       title: "Tailwind CSS",
