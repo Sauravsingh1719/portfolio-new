@@ -133,7 +133,7 @@ const Hero = () => {
                   <div className="flex gap-4">
                     {/* Use <a> for direct file download */}
                     <a
-                      href="/CV.pdf"
+                      href="/SAURAV_CV.pdf"
                       download
                       className="inline-flex items-center justify-center px-6 py-3.5 bg-gray-800 border border-gray-700 rounded-lg font-medium hover:bg-gray-700 transition-all duration-300"
                     >
