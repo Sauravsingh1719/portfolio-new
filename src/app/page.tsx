@@ -16,7 +16,6 @@ function page() {
         <Projects  />
         <Writings />
         <ContactPage />
-        <Footer />
     </div>
   )
 }
