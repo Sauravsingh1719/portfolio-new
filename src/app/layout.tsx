@@ -4,22 +4,22 @@ import "./globals.css";
 import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
 import AnimatedNavbar from "@/components/Navbar";
+import WelcomeScreen from "@/components/WelcomeScreen"; // Add this import
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: 'swap', // Improves performance and SEO
+  display: 'swap',
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
-  display: 'swap', // Improves performance and SEO
+  display: 'swap',
 });
 
-// Update this with your actual information
-const SITE_URL = "https://saurav190.vercel.app/"; // Replace with your actual domain
-const TWITTER_HANDLE = "@yourhandle"; // Replace with your Twitter handle
+const SITE_URL = "https://saurav190.vercel.app/";
+const TWITTER_HANDLE = "@yourhandle";
 
 export const metadata: Metadata = {
   title: {
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     creator: TWITTER_HANDLE,
     title: "Saurav - Full Stack Developer",
     description: "Full Stack Developer specializing in Next.js, React, and modern web technologies.",
-    images: ["/twitter-image.jpg"], // Create a Twitter-specific image
+    images: ["/twitter-image.jpg"],
   },
   robots: {
     index: true,
@@ -70,10 +70,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    // Add your Google Search Console verification code here
-    // google: "your-verification-code",
-  },
+  verification: {},
   category: "technology",
 };
 
@@ -85,17 +82,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        {/* Preload critical resources */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Favicon and app icons */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.webmanifest" />
         
-        {/* Structured Data for SEO */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -123,6 +116,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <WelcomeScreen /> {/* Add WelcomeScreen here */}
         <SplashCursor />
         <AnimatedNavbar />
         <main>
@@ -130,7 +124,6 @@ export default function RootLayout({
         </main>
         <Footer />
       </body>
-      
     </html>
   );
 }
