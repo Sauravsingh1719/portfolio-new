@@ -104,11 +104,6 @@ export default function ContactPage() {
       name: "LinkedIn",
       image: "/images/linkedin.png", // Replace with your image path
       url: "https://www.linkedin.com/in/saurav-kumar-262219337",
-    },
-    {
-      name: "Instagram",
-      image: "/images/instagram.jpg", // Replace with your image path
-      url: "https://www.instagram.com/saurav.singh19__/",
     }
   ];
 
