@@ -108,11 +108,8 @@ export default function ContactPage() {
   ];
 
   return (
-    <section id="contact" className="py-20 lg:py-32 relative overflow-hidden bg-black">
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full filter blur-3xl opacity-10 animate-pulse"></div>
-        <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full filter blur-3xl opacity-10 animate-pulse delay-1000"></div>
-      </div>
+    <section id="contact" className="py-20 lg:py-32 relative overflow-hidden">
+      {/* Removed the absolute glowing divs block from here */}
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

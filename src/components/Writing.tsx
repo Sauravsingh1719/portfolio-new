@@ -53,7 +53,7 @@ export function Writings() {
   }));
 
   return (
-    <section id="writings" className="py-20 lg:py-32 relative overflow-hidden bg-black">
+    <section id="writings" className="py-20 lg:py-32 relative overflow-hidden ">
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

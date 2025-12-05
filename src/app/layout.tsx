@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import SplashCursor from "@/components/SplashCursor";
 import Footer from "@/components/Footer";
 import AnimatedNavbar from "@/components/Navbar";
 import WelcomeScreen from "@/components/WelcomeScreen"; // Add this import
+import TrailingCursor from "@/components/TrailingCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -117,7 +117,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <WelcomeScreen /> {/* Add WelcomeScreen here */}
-        <SplashCursor />
+        <TrailingCursor />
         <AnimatedNavbar />
         <main>
           {children}

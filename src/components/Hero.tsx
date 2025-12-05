@@ -31,7 +31,7 @@ const Hero = () => {
   return (
     // mobile: 8% top padding, md+ use pt-5
     <div>
-      <section className="min-h-screen text-white flex items-center justify-center relative overflow-hidden bg-black">
+      <section className="min-h-screen text-white flex items-center justify-center relative overflow-hidden ">
         {/* RIGHT-SIDE PHOTO (hidden on small screens) */}
         <div className="hidden md:block absolute inset-y-0 right-0 w-1/3 lg:w-2/5 z-0 pointer-events-none">
           {/* parent must be relative for Image fill */}
