@@ -1,4 +1,3 @@
-// data/projects.ts
 export interface ProjectCaseStudy {
   id: string;
   title: string;
@@ -21,7 +20,116 @@ export interface ProjectCaseStudy {
 }
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
-  
+
+
+  {
+  id: "Dtg",
+  title: "Dynamic Portfolio & Blog Platform",
+  description: "A comprehensive, dynamic portfolio website with a secure admin panel, custom blog CMS, and automated newsletter system designed for a Senior Data Analyst.",
+  image: "/images/data.png",
+  liveUrl: "https://www.datatogrow.com/",
+  githubUrl: "https://github.com/Sauravsingh1719/datatogrow",
+  technologies: [
+    "Next.js v16.0.7",
+    "TypeScript",
+    "Tailwind CSS",
+    "Shadcn UI",
+    "MongoDB",
+    "NextAuth",
+    "TipTap Editor",
+    "Nodemailer",
+    "Cloudinary",
+    "Framer Motion"
+  ],
+  completedDate: "December 8, 2025",
+  duration: "2 weeks",
+  role: "Full Stack Developer",
+  problem: "The client, a Senior Data Analyst, required a professional online presence that allowed for dynamic content updates (projects, testimonials) and a blogging platform to share insights without touching code. Security was a major concern, along with the need for automated communication tools.",
+  solution: "Developed a secure, full-stack web application featuring a custom CMS with a rich text editor, robust 2FA security for the admin panel, and an integrated newsletter system to automate user engagement and lead tracking.",
+  features: [
+    {
+      title: "Secure Admin Panel",
+      description: "Full-authority dashboard secured via 2FA (hashed email OTPs with 5-minute expiry) and hashed passwords."
+    },
+    {
+      title: "Advanced Blog CMS",
+      description: "Integrated TipTap editor supporting rich text formatting, text highlighting, and dynamic image resizing/alignment."
+    },
+    {
+      title: "Automated Communication",
+      description: "Newsletter subscription system that notifies subscribers of new posts, plus auto-confirmation emails for contact queries."
+    },
+    {
+      title: "Dynamic Content Management",
+      description: "Real-time updates for projects, testimonials, and contact form submissions directly from the admin dashboard."
+    }
+  ],
+  process: [
+    {
+      title: "Requirement Analysis",
+      description: "Identified the need for a secure, content-heavy platform with specific focus on blogging capabilities and lead capture."
+    },
+    {
+      title: "Security Architecture",
+      description: "Implemented robust authentication flows using NextAuth and custom 2FA logic with OTP hashing."
+    },
+    {
+      title: "Core Development",
+      description: "Built the frontend using Next.js 16 and Shadcn UI, while setting up MongoDB schemas for dynamic data handling."
+    },
+    {
+      title: "Integration & Testing",
+      description: "Integrated Cloudinary for media and fine-tuned the TipTap editor for a seamless writing experience."
+    }
+  ],
+  challenges: [
+    {
+      title: "Rich Text Editor Customization",
+      description: "Implementing advanced text alignment and image resizing within the TipTap editor proved complex.",
+      solution: "Leveraged Gemini AI and official documentation to build custom extensions for image alignment and resize handles."
+    },
+    {
+      title: "Admin Security Implementation",
+      description: "Ensuring the admin panel was impenetrable while maintaining a smooth user experience.",
+      solution: "Implemented a 2FA system where OTPs are hashed, stored with a 5-minute TTL (Time-To-Live), and auto-deleted upon verification."
+    },
+    {
+      title: "Email Automation Logic",
+      description: "Handling different email triggers (newsletters vs. contact forms) efficiently.",
+      solution: "Configured Nodemailer with specific templates to handle broadcast emails for subscribers and transactional emails for inquiries."
+    }
+  ],
+  results: [
+    {
+      title: "Client Satisfaction",
+      value: "Delivered a fully functional production build within the 2-week timeline."
+    },
+    {
+      title: "Security Standards",
+      value: "Achieved 100% secure login flow with implemented 2FA and data hashing."
+    },
+    {
+      title: "Content Efficiency",
+      value: "Reduced time-to-publish for client blogs by providing a drag-and-drop image interface."
+    },
+    {
+      title: "System Performance",
+      value: "Optimized Next.js 16 rendering for fast page loads despite dynamic data fetching."
+    }
+  ],
+  learnings: [
+    "Deep dive into Next.js 16 server actions and security patterns",
+    "Customizing TipTap extensions for specific formatting needs",
+    "Implementing secure OTP logic with database hashing and TTL",
+    "Managing image uploads and optimization with Cloudinary"
+  ],
+  futureEnhancements: [
+    "Analytics dashboard to track blog views and visitor demographics",
+    "SEO optimization tools built directly into the blog editor",
+    "Dark mode toggle for better reading experience",
+    "Comment section for blogs with moderation tools"
+  ]
+},
 {
   id: "testify",
   title: "Testify - Online Exam Management System",

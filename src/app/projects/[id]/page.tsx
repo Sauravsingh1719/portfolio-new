@@ -1,4 +1,3 @@
-// app/projects/[id]/page.tsx
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -21,7 +20,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
   return (
     <div className="min-h-screen bg-black text-white pt-20">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
-        {/* Back button */}
+        {}
         <Link 
           href="/#projects" 
           className="inline-flex items-center text-gray-400 hover:text-white mb-8 transition-colors"
@@ -30,7 +29,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           Back to Projects
         </Link>
 
-        {/* Hero section */}
+        {}
         <div className="mb-12">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-6">
             <h1 className="text-4xl md:text-5xl font-bold">{project.title}</h1>
@@ -78,7 +77,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             ))}
           </div>
 
-          {/* Project metadata */}
+          {}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4 bg-gray-900/50 rounded-lg">
             <div className="flex items-center">
               <Calendar className="h-5 w-5 mr-2 text-blue-400" />
@@ -95,9 +94,9 @@ export default function ProjectPage({ params }: ProjectPageProps) {
           </div>
         </div>
 
-        {/* Case study content */}
+        {}
         <div className="space-y-12">
-          {/* Problem & Solution */}
+          {}
           <div className="grid md:grid-cols-2 gap-8">
             <div>
               <h2 className="text-2xl font-bold mb-4">The Problem</h2>
@@ -109,7 +108,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
-          {/* Key Features */}
+          {}
           <div>
             <h2 className="text-2xl font-bold mb-4">Key Features</h2>
             <div className="grid md:grid-cols-2 gap-4">
@@ -125,7 +124,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
-          {/* Development Process */}
+          {}
           <div>
             <h2 className="text-2xl font-bold mb-4">Development Process</h2>
             <div className="space-y-4">
@@ -165,7 +164,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
-          {/* Results */}
+          {}
           <div>
             <h2 className="text-2xl font-bold mb-4">Results & Impact</h2>
             <div className="grid md:grid-cols-2 gap-6">
@@ -178,7 +177,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
-          {/* Learnings */}
+          {}
           <div>
             <h2 className="text-2xl font-bold mb-4">Key Learnings</h2>
             <ul className="space-y-2">
@@ -191,7 +190,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </ul>
           </div>
 
-          {/* Future Enhancements */}
+          {}
           {project.futureEnhancements && (
             <div>
               <h2 className="text-2xl font-bold mb-4">Future Enhancements</h2>
@@ -206,7 +205,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           )}
 
-          {/* Project Links */}
+          {}
           <div className="flex flex-col sm:flex-row gap-4 pt-8 border-t border-gray-800">
             <a
               href={project.liveUrl}

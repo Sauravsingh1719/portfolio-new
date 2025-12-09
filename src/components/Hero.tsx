@@ -29,12 +29,11 @@ const staggerChildren = {
 
 const Hero = () => {
   return (
-    // mobile: 8% top padding, md+ use pt-5
     <div>
       <section className="min-h-screen text-white flex items-center justify-center relative overflow-hidden ">
-        {/* RIGHT-SIDE PHOTO (hidden on small screens) */}
+        {}
         <div className="hidden md:block absolute inset-y-0 right-0 w-1/3 lg:w-2/5 z-0 pointer-events-none">
-          {/* parent must be relative for Image fill */}
+          {}
           <div className="relative w-full h-full">
             <Image
               src="/images/profile.png"
@@ -43,15 +42,15 @@ const Hero = () => {
               style={{ objectFit: 'cover', objectPosition: 'right center' }}
               priority={false}
             />
-            {/* overlay gradient to blend image into the black background and keep text readable */}
+            {}
             <div className="absolute inset-0 bg-gradient-to-l from-black/95 to-transparent" />
           </div>
         </div>
 
-        {/* Background pattern (subtle) */}
+        {}
         <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
 
-        {/* Animated floating blobs (behind text/content) */}
+        {}
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl z-0"
           animate={{
@@ -79,10 +78,10 @@ const Hero = () => {
           }}
         />
 
-        {/* MAIN CONTENT (above photo/background) */}
+        {}
         <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
-            {/* Left Content */}
+            {}
             <motion.div
               className="flex flex-col justify-center"
               variants={staggerChildren}
@@ -90,7 +89,7 @@ const Hero = () => {
               animate="visible"
             >
               <div className="space-y-8">
-                {/* Introductory badge */}
+                {}
                 <motion.div
                   className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800 border border-gray-700"
                   variants={fadeInUp}
@@ -99,7 +98,7 @@ const Hero = () => {
                   <span className="text-sm font-medium">Full Stack Developer</span>
                 </motion.div>
 
-                {/* Main headline */}
+                {}
                 <motion.h1
                   className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
                   variants={fadeInUp}
@@ -111,7 +110,7 @@ const Hero = () => {
                   </span>
                 </motion.h1>
 
-                {/* Description */}
+                {}
                 <motion.p
                   className="text-xl text-gray-300 max-w-2xl leading-relaxed"
                   variants={fadeInUp}
@@ -120,7 +119,7 @@ const Hero = () => {
                   with Next.js, React, and modern web technologies. I turn complex ideas into seamless digital experiences.
                 </motion.p>
 
-                {/* CTAs */}
+                {}
                 <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeInUp}>
                   <Link
                     href="#projects"
@@ -131,7 +130,7 @@ const Hero = () => {
                   </Link>
 
                   <div className="flex gap-4">
-                    {/* Use <a> for direct file download */}
+                    {}
                     <a
                       href="/SAURAV_CV.pdf"
                       download
@@ -151,25 +150,21 @@ const Hero = () => {
                   </div>
                 </motion.div>
 
-                {/* Stats or quick facts */}
+                {}
                 <motion.div className="flex gap-8 pt-4" variants={fadeInUp}>
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-400">15+</div>
                     <div className="text-gray-400 text-sm">Projects</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">5+</div>
+                    <div className="text-2xl font-bold text-purple-400">9+</div>
                     <div className="text-gray-400 text-sm">Technologies</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-green-400">100%</div>
-                    <div className="text-gray-400 text-sm">Client Satisfaction</div>
                   </div>
                 </motion.div>
               </div>
             </motion.div>
 
-            {/* Right Side - Globe Component (stays above the background photo) */}
+            {}
             <motion.div
               className="flex items-center justify-center h-full"
               initial={{ opacity: 0, scale: 0.8 }}
@@ -183,7 +178,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {}
         <motion.div
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
           initial={{ opacity: 0 }}
