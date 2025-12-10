@@ -3,15 +3,18 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { projectCaseStudies } from '@/data/projects';
 import { ArrowLeft, ExternalLink, Github, Calendar, Clock, Users } from 'lucide-react';
+import { Metadata } from 'next';
 
 interface ProjectPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projectCaseStudies.find(p => p.id === params.id);
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const { id } = await params;
+  
+  const project = projectCaseStudies.find(p => p.id === id);
   
   if (!project) {
     notFound();
@@ -63,6 +66,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
               alt={project.title}
               fill
               className="object-cover"
+              priority
             />
           </div>
 
@@ -147,7 +151,7 @@ export default function ProjectPage({ params }: ProjectPageProps) {
             </div>
           </div>
 
-          {/* Challenges */}
+          {}
           <div>
             <h2 className="text-2xl font-bold mb-4">Challenges & Solutions</h2>
             <div className="space-y-4">
@@ -238,8 +242,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: ProjectPageProps) {
-  const project = projectCaseStudies.find(p => p.id === params.id);
+export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
+  const { id } = await params;
+  const project = projectCaseStudies.find(p => p.id === id);
   
   if (!project) {
     return {

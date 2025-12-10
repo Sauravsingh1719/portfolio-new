@@ -1,11 +1,10 @@
-
 'use client';
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Menu, X, Home, FolderGit2, Mail } from 'lucide-react';
+import { Menu, X, Home, FolderGit2, Mail, Linkedin } from 'lucide-react';
 
 const AnimatedNavbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -21,21 +20,25 @@ const AnimatedNavbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = [
+  // 1. Defined Center Items (Home, Projects, LinkedIn)
+  const centerNavItems = [
     { name: 'Home', href: '/', icon: Home },
     { name: 'Projects', href: '/#projects', icon: FolderGit2 },
-    { name: 'Contact', href: '/#contact', icon: Mail },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/saurav-kumar-262219337/', icon: Linkedin },
   ];
+
+  // 2. Defined Right/End Item (Contact)
+  const contactItem = { name: 'Contact', href: '/#contact', icon: Mail };
+
+  // Combine for mobile menu
+  const allNavItems = [...centerNavItems, contactItem];
 
   const logoVariants = {
     hidden: { opacity: 0, y: -20 },
     visible: { 
       opacity: 1, 
       y: 0,
-      transition: { 
-        duration: 0.5,
-        ease: "easeOut"
-      }
+      transition: { duration: 0.5, ease: "easeOut" }
     }
   };
 
@@ -44,31 +47,13 @@ const AnimatedNavbar = () => {
     visible: (i: number) => ({ 
       opacity: 1, 
       y: 0,
-      transition: { 
-        delay: i * 0.1,
-        duration: 0.4,
-        ease: "easeOut"
-      }
+      transition: { delay: i * 0.1, duration: 0.4, ease: "easeOut" }
     })
   };
 
   const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      height: 0,
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    },
-    open: {
-      opacity: 1,
-      height: "auto",
-      transition: {
-        duration: 0.3,
-        ease: "easeInOut"
-      }
-    }
+    closed: { opacity: 0, height: 0, transition: { duration: 0.3, ease: "easeInOut" } },
+    open: { opacity: 1, height: "auto", transition: { duration: 0.3, ease: "easeInOut" } }
   };
 
   return (
@@ -79,12 +64,13 @@ const AnimatedNavbar = () => {
         transition={{ duration: 0.6, ease: "easeOut" }}
         className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isScrolled 
-            ? 'bg-black/90 backdrop-blur-md py-2 shadow-lg' 
-            : 'bg-transparent py-4'
+            ? 'bg-black/90 backdrop-blur-md py-3 shadow-lg' 
+            : 'bg-transparent py-5'
         }`}
       >
         <div className="container mx-auto px-4 md:px-6 flex justify-between items-center">
-          {/* Left side navigation items (visible on desktop) */}
+          
+          {/* --- LEFT: LOGO --- */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -99,13 +85,12 @@ const AnimatedNavbar = () => {
             </Link>
           </motion.div>
 
-
-          {/* Center logo */}
-          
-
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.slice(0, 2).map((item, index) => {
+          {/* --- CENTER: HOME, PROJECTS, LINKEDIN --- */}
+          <div className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2">
+            {centerNavItems.map((item, index) => {
               const Icon = item.icon;
+              const isLinkedIn = item.name === 'LinkedIn';
+              
               return (
                 <motion.div
                   key={item.name}
@@ -118,13 +103,17 @@ const AnimatedNavbar = () => {
                 >
                   <Link 
                     href={item.href}
+                    target={isLinkedIn ? "_blank" : "_self"} // Open LinkedIn in new tab
                     className={`flex items-center text-sm font-medium transition-colors ${
                       pathname === item.href
                         ? 'text-blue-400'
                         : 'text-gray-300 hover:text-white'
                     }`}
                   >
-                    <Icon className="w-4 h-4 mr-2" />
+                    {/* Applied conditional blue color for LinkedIn Icon */}
+                    <Icon 
+                      className={`w-4 h-4 mr-2 ${isLinkedIn ? 'text-[#0A66C2]' : ''}`} 
+                    />
                     {item.name}
                   </Link>
                 </motion.div>
@@ -132,10 +121,10 @@ const AnimatedNavbar = () => {
             })}
           </div>
 
-          {/* Right side navigation item (visible on desktop) */}
+          {/* --- RIGHT: CONTACT --- */}
           <div className="hidden md:flex items-center">
             <motion.div
-              custom={2}
+              custom={3}
               initial="hidden"
               animate="visible"
               variants={itemVariants}
@@ -143,20 +132,20 @@ const AnimatedNavbar = () => {
               whileTap={{ scale: 0.95 }}
             >
               <Link 
-                href={navItems[2].href}
-                className={`flex items-center text-sm font-medium transition-colors ${
-                  pathname === navItems[2].href
-                    ? 'text-blue-400'
-                    : 'text-gray-300 hover:text-white'
+                href={contactItem.href}
+                className={`flex items-center text-sm font-medium px-4 py-2 rounded-full border transition-all ${
+                  pathname === contactItem.href
+                    ? 'border-blue-500 text-blue-400 bg-blue-500/10'
+                    : 'border-gray-600 text-gray-300 hover:border-white hover:text-white'
                 }`}
               >
-                <Mail className="w-4 h-4 mr-2" />
-                {navItems[2].name}
+                <contactItem.icon className="w-4 h-4 mr-2" />
+                {contactItem.name}
               </Link>
             </motion.div>
           </div>
 
-          {/* Mobile menu button */}
+          {/* --- MOBILE HAMBURGER --- */}
           <div className="md:hidden">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -168,7 +157,7 @@ const AnimatedNavbar = () => {
           </div>
         </div>
 
-        {/* Mobile menu */}
+        {/* --- MOBILE MENU CONTENT --- */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
@@ -179,8 +168,10 @@ const AnimatedNavbar = () => {
               className="md:hidden bg-black/95 backdrop-blur-md overflow-hidden"
             >
               <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-                {navItems.map((item, index) => {
+                {allNavItems.map((item, index) => {
                   const Icon = item.icon;
+                  const isLinkedIn = item.name === 'LinkedIn';
+
                   return (
                     <motion.div
                       key={item.name}
@@ -197,7 +188,9 @@ const AnimatedNavbar = () => {
                             : 'text-gray-300 hover:text-white'
                         }`}
                       >
-                        <Icon className="w-5 h-5 mr-3" />
+                         <Icon 
+                          className={`w-5 h-5 mr-3 ${isLinkedIn ? 'text-[#0A66C2]' : ''}`} 
+                        />
                         {item.name}
                       </Link>
                     </motion.div>
@@ -209,7 +202,7 @@ const AnimatedNavbar = () => {
         </AnimatePresence>
       </motion.nav>
 
-      {/* Spacer to prevent content from being hidden behind fixed navbar */}
+      {/* Spacer to prevent content overlap */}
       <div className="h-16 md:h-20"></div>
     </>
   );
