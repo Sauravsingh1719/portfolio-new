@@ -20,116 +20,113 @@ export interface ProjectCaseStudy {
 }
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
-
-
   {
-  id: "Dtg",
-  title: "Dynamic Portfolio & Blog Platform",
-  description: "A comprehensive, dynamic portfolio website with a secure admin panel, custom blog CMS, and automated newsletter system designed for a Senior Data Analyst.",
-  image: "/images/data.png",
+    id: "data-analyst-portfolio", 
+    title: "Senior Data Analyst Portfolio & CMS",
+    image: "/images/data.png",
   liveUrl: "https://www.datatogrow.com/",
   githubUrl: "https://github.com/Sauravsingh1719/datatogrow",
-  technologies: [
-    "Next.js v16.0.7",
-    "TypeScript",
-    "Tailwind CSS",
-    "Shadcn UI",
-    "MongoDB",
-    "NextAuth",
-    "TipTap Editor",
-    "Nodemailer",
-    "Cloudinary",
-    "Framer Motion"
-  ],
-  completedDate: "December 8, 2025",
-  duration: "2 weeks",
-  role: "Full Stack Developer",
-  problem: "The client, a Senior Data Analyst, required a professional online presence that allowed for dynamic content updates (projects, testimonials) and a blogging platform to share insights without touching code. Security was a major concern, along with the need for automated communication tools.",
-  solution: "Developed a secure, full-stack web application featuring a custom CMS with a rich text editor, robust 2FA security for the admin panel, and an integrated newsletter system to automate user engagement and lead tracking.",
-  features: [
-    {
-      title: "Secure Admin Panel",
-      description: "Full-authority dashboard secured via 2FA (hashed email OTPs with 5-minute expiry) and hashed passwords."
-    },
-    {
-      title: "Advanced Blog CMS",
-      description: "Integrated TipTap editor supporting rich text formatting, text highlighting, and dynamic image resizing/alignment."
-    },
-    {
-      title: "Automated Communication",
-      description: "Newsletter subscription system that notifies subscribers of new posts, plus auto-confirmation emails for contact queries."
-    },
-    {
-      title: "Dynamic Content Management",
-      description: "Real-time updates for projects, testimonials, and contact form submissions directly from the admin dashboard."
-    }
-  ],
-  process: [
-    {
-      title: "Requirement Analysis",
-      description: "Identified the need for a secure, content-heavy platform with specific focus on blogging capabilities and lead capture."
-    },
-    {
-      title: "Security Architecture",
-      description: "Implemented robust authentication flows using NextAuth and custom 2FA logic with OTP hashing."
-    },
-    {
-      title: "Core Development",
-      description: "Built the frontend using Next.js 16 and Shadcn UI, while setting up MongoDB schemas for dynamic data handling."
-    },
-    {
-      title: "Integration & Testing",
-      description: "Integrated Cloudinary for media and fine-tuned the TipTap editor for a seamless writing experience."
-    }
-  ],
-  challenges: [
-    {
-      title: "Rich Text Editor Customization",
-      description: "Implementing advanced text alignment and image resizing within the TipTap editor proved complex.",
-      solution: "Leveraged Gemini AI and official documentation to build custom extensions for image alignment and resize handles."
-    },
-    {
-      title: "Admin Security Implementation",
-      description: "Ensuring the admin panel was impenetrable while maintaining a smooth user experience.",
-      solution: "Implemented a 2FA system where OTPs are hashed, stored with a 5-minute TTL (Time-To-Live), and auto-deleted upon verification."
-    },
-    {
-      title: "Email Automation Logic",
-      description: "Handling different email triggers (newsletters vs. contact forms) efficiently.",
-      solution: "Configured Nodemailer with specific templates to handle broadcast emails for subscribers and transactional emails for inquiries."
-    }
-  ],
-  results: [
-    {
-      title: "Client Satisfaction",
-      value: "Delivered a fully functional production build within the 2-week timeline."
-    },
-    {
-      title: "Security Standards",
-      value: "Achieved 100% secure login flow with implemented 2FA and data hashing."
-    },
-    {
-      title: "Content Efficiency",
-      value: "Reduced time-to-publish for client blogs by providing a drag-and-drop image interface."
-    },
-    {
-      title: "System Performance",
-      value: "Optimized Next.js 16 rendering for fast page loads despite dynamic data fetching."
-    }
-  ],
-  learnings: [
-    "Deep dive into Next.js 16 server actions and security patterns",
-    "Customizing TipTap extensions for specific formatting needs",
-    "Implementing secure OTP logic with database hashing and TTL",
-    "Managing image uploads and optimization with Cloudinary"
-  ],
-  futureEnhancements: [
-    "Analytics dashboard to track blog views and visitor demographics",
-    "SEO optimization tools built directly into the blog editor",
-    "Dark mode toggle for better reading experience",
-    "Comment section for blogs with moderation tools"
-  ]
-},
+    description: "A high-performance, fully dynamic portfolio and blog platform with a custom-built Content Management System (CMS). Designed for a Senior Data Analyst to showcase complex case studies without writing code.",
+    technologies: [
+      "Next.js 16",
+      "TypeScript",
+      "Tailwind CSS",
+      "MongoDB",
+      "NextAuth (2FA)",
+      "Resend API",
+      "Cloudinary",
+      "Framer Motion"
+    ],
+    completedDate: "December 2025",
+    duration: "4 Weeks",
+    role: "Full Stack Developer",
+    problem: "The client, a Senior Data Analyst, needed a professional online presence to share detailed case studies and blog posts. Existing website builders were too rigid, and maintaining a traditional VPS for a dynamic site was too costly and technical for their needs. They required a secure way to manage content dynamically without touching the codebase.",
+    solution: "I engineered a serverless web application using Next.js and MongoDB. I built a custom, secure Admin Dashboard featuring Two-Factor Authentication (2FA) and a rich-text editor (TipTap), allowing the client to format complex data stories easily. The architecture leverages Vercel for hosting and Cloudinary for media, providing enterprise-grade performance with minimal maintenance costs.",
+    features: [
+      {
+        title: "Secure Admin Panel",
+        description: "Custom dashboard protected by NextAuth and OTP-based Two-Factor Authentication (2FA) with 5-minute token expiration."
+      },
+      {
+        title: "Dynamic CMS",
+        description: "Full Create/Read/Update/Delete (CRUD) capabilities for Projects, Blogs, and Testimonials via a user-friendly interface."
+      },
+      {
+        title: "Rich Text Editing",
+        description: "Integrated TipTap editor providing an MS Word-like experience for formatting deep-dive articles and case studies."
+      },
+      {
+        title: "Automated Newsletter",
+        description: "System to capture subscribers and trigger instant email notifications via Resend API when new blogs are published."
+      },
+      {
+        title: "Smart Contact System",
+        description: "Contact form with read/unread status management for the admin and instant auto-replies for the user."
+      },
+      {
+        title: "Cloud Image Optimization",
+        description: "Seamless integration with Cloudinary to handle image uploads, resizing, and optimization automatically."
+      }
+    ],
+    process: [
+      {
+        title: "Discovery & Architecture",
+        description: "Analyzed the client's workflow to design a database schema that supports categorized case studies and dynamic blogging."
+      },
+      {
+        title: "Backend Security Implementation",
+        description: "Built the authentication flow first, ensuring the Admin API routes were protected by hashed OTPs and session validation."
+      },
+      {
+        title: "Frontend & CMS Development",
+        description: "Developed the public-facing UI and the private Admin Dashboard, integrating the TipTap editor for content creation."
+      },
+      {
+        title: "Deployment Strategy",
+        description: "Configured DNS redirection from Hostinger to Vercel to combine custom domain ownership with serverless scalability."
+      }
+    ],
+    challenges: [
+      {
+        title: "Slow Transactional Emails",
+        description: "Initially used NodeMailer via SMTP, but the handshake process caused noticeable delays during form submissions.",
+        solution: "Migrated to the Resend API, reducing email transmission time to milliseconds and decoupling the process from the user interface."
+      },
+      {
+        title: "Admin Security Risks",
+        description: "Standard password protection felt insufficient for a site controlling a professional's entire public portfolio.",
+        solution: "Implemented a custom 2FA logic where hashed OTPs are stored in MongoDB with a strict Time-To-Live (TTL) index."
+      },
+      {
+        title: "Cost vs. Dynamic Features",
+        description: "Client wanted dynamic features (database, auth) but wanted to avoid the monthly cost of a VPS.",
+        solution: "Utilized Vercel's serverless functions and MongoDB Atlas free tier to deliver a dynamic app with static-hosting-like costs."
+      }
+    ],
+    results: [
+      {
+        title: "Performance",
+        value: "100% Lighthouse Score"
+      },
+      {
+        title: "Client Efficiency",
+        value: "0 Code required to update"
+      },
+      {
+        title: "Security",
+        value: "2-Factor Auth Protected"
+      }
+    ],
+    learnings: [
+      "Implementing custom 2FA flows teaches the importance of defense-in-depth security strategies.",
+      "Serverless architecture requires careful handling of database connections to prevent cold-start latency.",
+      "The Resend API is significantly superior to traditional SMTP for modern React applications."
+    ],
+    futureEnhancements: [
+      "Adding SEO management features in the Admin Panel for better search engine visibility.",
+      "Implementing an analytics dashboard inside the Admin Panel to track views."
+    ]
+  },
 {
   id: "testify",
   title: "Testify - Online Exam Management System",
