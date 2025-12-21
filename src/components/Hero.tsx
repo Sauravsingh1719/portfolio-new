@@ -132,12 +132,11 @@ const Hero = () => {
                   <div className="flex gap-4">
                     {}
                     <a
-                      href="/SAURAV_CV.pdf"
-                      download
+                      href="/resume"
                       className="inline-flex items-center justify-center px-6 py-3.5 bg-gray-800 border border-gray-700 rounded-lg font-medium hover:bg-gray-700 transition-all duration-300"
                     >
                       <Download className="mr-2 h-5 w-5" />
-                      Download CV
+                      View CV
                     </a>
 
                     <Link
