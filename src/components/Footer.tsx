@@ -7,12 +7,12 @@ export default function Footer() {
     {
       name: "GitHub",
       image: "/images/github.png",
-      url: "https://github.com/yourusername",
+      url: "https://github.com/Sauravsingh1719",
     },
     {
       name: "LinkedIn",
       image: "/images/linkedin.png",
-      url: "https://linkedin.com/in/yourusername",
+      url: "https://www.linkedin.com/in/saurav-kumar-262219337/",
     },
     {
       name: "Instagram",
