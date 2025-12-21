@@ -20,111 +20,128 @@ export interface ProjectCaseStudy {
 }
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
-  {
-    id: "data-analyst-portfolio", 
-    title: "Senior Data Analyst Portfolio & CMS",
-    image: "/images/data.png",
-  liveUrl: "https://www.datatogrow.com/",
-  githubUrl: "https://github.com/Sauravsingh1719/datatogrow",
-    description: "A high-performance, fully dynamic portfolio and blog platform with a custom-built Content Management System (CMS). Designed for a Senior Data Analyst to showcase complex case studies without writing code.",
+   {
+    id: "data-analyst-portfolio",
+    title: "Senior Data Analyst Portfolio & Custom CMS",
+    liveUrl: "https://www.datatogrow.com/", 
+    githubUrl: "https://github.com/Sauravsingh1719/datatogrow.git",
+    image: "/images/Hero.png", // Ensure a screenshot exists at this path
+    description: "A high-performance, professional portfolio platform with a custom-built 'Digital Command Center' (CMS). It empowers a Senior Data Analyst to manage complex case studies, publish blogs, and handle client inquiries with absolute freedom—no coding required.",
     technologies: [
-      "Next.js 16",
+      "Next.js v16.0.7",
       "TypeScript",
       "Tailwind CSS",
+      "shadcn/ui",
+      "Framer Motion",
       "MongoDB",
-      "NextAuth (2FA)",
+      "NextAuth (Auth.js)",
       "Resend API",
       "Cloudinary",
-      "Framer Motion"
+      "TipTap Editor"
     ],
     completedDate: "December 2025",
-    duration: "4 Weeks",
+    duration: "5 Weeks",
     role: "Full Stack Developer",
-    problem: "The client, a Senior Data Analyst, needed a professional online presence to share detailed case studies and blog posts. Existing website builders were too rigid, and maintaining a traditional VPS for a dynamic site was too costly and technical for their needs. They required a secure way to manage content dynamically without touching the codebase.",
-    solution: "I engineered a serverless web application using Next.js and MongoDB. I built a custom, secure Admin Dashboard featuring Two-Factor Authentication (2FA) and a rich-text editor (TipTap), allowing the client to format complex data stories easily. The architecture leverages Vercel for hosting and Cloudinary for media, providing enterprise-grade performance with minimal maintenance costs.",
+
+    problem: "The client, a Senior Data Analyst, needed a professional digital presence to showcase resumes, detailed project case studies, and insights via a blog. They already owned a domain and email on Hostinger, but faced a major roadblock: deploying a modern, dynamic application there would require purchasing an expensive Virtual Private Server (VPS). They needed a cost-effective solution that didn't sacrifice speed or professionalism. Furthermore, they required complete autonomy to update content dynamically without relying on a developer for every change.",
+
+    solution: "I engineered a hybrid cloud architecture to solve the cost challenge. We kept the domain on Hostinger but rerouted web traffic to **Vercel** (a high-speed, free global hosting network), eliminating expensive VPS costs entirely. I then developed a secure, bespoke Admin Panel. By integrating the **TipTap Editor** (providing an 'MS Word-like' writing experience) and **Cloudinary** (for automated image handling), I created a seamless interface where the client can manage their entire digital footprint effortlessly.",
+
     features: [
       {
-        title: "Secure Admin Panel",
-        description: "Custom dashboard protected by NextAuth and OTP-based Two-Factor Authentication (2FA) with 5-minute token expiration."
+        title: "Professional Resume Hub",
+        description: "The public site features a dedicated section where visitors can either view the client's professional resume directly in the browser or download it as a PDF with a single click."
       },
       {
-        title: "Dynamic CMS",
-        description: "Full Create/Read/Update/Delete (CRUD) capabilities for Projects, Blogs, and Testimonials via a user-friendly interface."
+        title: "MS Word-like Content Editor (TipTap)",
+        description: "For creating Blogs and Case Studies, I integrated the **TipTap** editor into the admin panel. This gives the client a familiar interface to write text, format headings, align paragraphs, and structure their deep-dive content exactly how they want it without knowing HTML."
       },
       {
-        title: "Rich Text Editing",
-        description: "Integrated TipTap editor providing an MS Word-like experience for formatting deep-dive articles and case studies."
+        title: "Smart Draft System",
+        description: "The admin panel includes a 'Draft Mode' capability. The client can write blog posts or case studies and save them as drafts to edit later, ensuring only polished, final content is published to the live site."
       },
       {
-        title: "Automated Newsletter",
-        description: "System to capture subscribers and trigger instant email notifications via Resend API when new blogs are published."
+        title: "One-Click Newsletter Broadcast",
+        description: "I built a powerful notification system. Whenever a new blog is published, the admin can click a single button to trigger the **Resend API**, instantly sending a beautifully formatted email notification to all subscribed users."
       },
       {
-        title: "Smart Contact System",
-        description: "Contact form with read/unread status management for the admin and instant auto-replies for the user."
+        title: "Intelligent Image Management (Cloudinary)",
+        description: "The client can upload images directly within the blog/project editor. I used **Cloudinary** to automatically store, optimize, and resize these images in the cloud. The client also has controls to align images (top, center, bottom) within their text posts easily."
       },
       {
-        title: "Cloud Image Optimization",
-        description: "Seamless integration with Cloudinary to handle image uploads, resizing, and optimization automatically."
+        title: "High-Speed Triple-Action Contact Form",
+        description: "When a visitor submits the contact form, three actions happen simultaneously and instantly, thanks to the **Resend API** (a fast HTTP email service): 1) The message is saved to **MongoDB** (the database). 2) The admin receives an immediate notification email. 3) The visitor receives a polite auto-confirmation email."
+      },
+      {
+        title: "Admin Message Tracking Dashboard",
+        description: "Inside the secure admin panel, the client can view a list of all received contact messages. I implemented a feature allowing them to mark messages as 'Read' or 'Unread', ensuring they never lose track of a potential lead or inquiry."
+      },
+      {
+        title: "Bank-Grade Security (Hashed OTPs)",
+        description: "Security was paramount. Login requires a password plus a 2FA One-Time Password (OTP). Crucially, these OTPs are stored in the database in a 'hashed' (scrambled) state and automatically delete after 5 minutes. Even if the database were compromised, the login codes would be useless to an attacker."
       }
     ],
+
     process: [
       {
-        title: "Discovery & Architecture",
-        description: "Analyzed the client's workflow to design a database schema that supports categorized case studies and dynamic blogging."
+        title: "Strategic Architecture & Cost Saving",
+        description: "Devised the plan to leverage the client's existing Hostinger assets for domain/email while using Vercel for free, high-performance application hosting."
       },
       {
-        title: "Backend Security Implementation",
-        description: "Built the authentication flow first, ensuring the Admin API routes were protected by hashed OTPs and session validation."
+        title: "Security-First Backend",
+        description: "Implemented the **NextAuth** system immediately, ensuring that password hashing and the complex Hashed OTP logic with 5-minute expiration timers were working correctly before building UI."
       },
       {
-        title: "Frontend & CMS Development",
-        description: "Developed the public-facing UI and the private Admin Dashboard, integrating the TipTap editor for content creation."
+        title: "Modern UI/UX Design",
+        description: "Utilized **shadcn/ui** component blocks for a clean, professional look and **Framer Motion** to add smooth, subtle animations to page transitions and interactive elements."
       },
       {
-        title: "Deployment Strategy",
-        description: "Configured DNS redirection from Hostinger to Vercel to combine custom domain ownership with serverless scalability."
+        title: "CMS Integration",
+        description: "Connected the **TipTap** rich text editor and **Cloudinary** image uploader into the admin forms, bridging the gap between user input and database storage."
       }
     ],
+
     challenges: [
       {
-        title: "Slow Transactional Emails",
-        description: "Initially used NodeMailer via SMTP, but the handshake process caused noticeable delays during form submissions.",
-        solution: "Migrated to the Resend API, reducing email transmission time to milliseconds and decoupling the process from the user interface."
+        title: "Slow Email Delivery with SMTP",
+        description: "Initially, I used a traditional tool called NodeMailer. It uses an 'SMTP handshake' method which takes several seconds to connect to a server, making the contact form feel slow and clunky.",
+        solution: "I replaced it with the **Resend API**. Because it uses modern HTTP requests instead of SMTP handshakes, emails are triggered instantly, making the user experience feel immediate."
       },
       {
-        title: "Admin Security Risks",
-        description: "Standard password protection felt insufficient for a site controlling a professional's entire public portfolio.",
-        solution: "Implemented a custom 2FA logic where hashed OTPs are stored in MongoDB with a strict Time-To-Live (TTL) index."
+        title: "Ensuring OTP Security",
+        description: "Storing temporary login codes (OTPs) in plain text in a database is a security risk. If the database is leaked, valid login codes are exposed.",
+        solution: "I implemented cryptographic hashing for the OTPs before saving them to **MongoDB**. I also used MongoDB's TTL (Time-To-Live) index to ensure the codes self-destruct exactly after 5 minutes."
       },
       {
-        title: "Cost vs. Dynamic Features",
-        description: "Client wanted dynamic features (database, auth) but wanted to avoid the monthly cost of a VPS.",
-        solution: "Utilized Vercel's serverless functions and MongoDB Atlas free tier to deliver a dynamic app with static-hosting-like costs."
+        title: "Complex Image Alignment for Non-Coders",
+        description: "The client needed the ability to align images (left, center, right) within a blog post without knowing CSS code.",
+        solution: "I customized the **TipTap** editor extensions to provide simple alignment buttons that automatically apply the correct styling to the images uploaded via **Cloudinary**."
       }
     ],
+
     results: [
       {
-        title: "Performance",
-        value: "100% Lighthouse Score"
+        title: "Monthly Hosting Cost",
+        value: "$0 (vs VPS cost)"
       },
       {
-        title: "Client Efficiency",
-        value: "0 Code required to update"
+        title: "Client Autonomy",
+        value: "100% No-Code Management"
       },
       {
-        title: "Security",
-        value: "2-Factor Auth Protected"
+        title: "Security Level",
+        value: "Hashed 2FA Enabled"
       }
     ],
+
     learnings: [
-      "Implementing custom 2FA flows teaches the importance of defense-in-depth security strategies.",
-      "Serverless architecture requires careful handling of database connections to prevent cold-start latency.",
-      "The Resend API is significantly superior to traditional SMTP for modern React applications."
+      "Combining **Hostinger** DNS with **Vercel** hosting is an incredibly powerful strategy for delivering dynamic, low-cost solutions to freelance clients.",
+      "For modern web apps, HTTP-based email APIs like **Resend** are vastly superior in speed and reliability compared to traditional SMTP transports like NodeMailer.",
+      "Implementing 'Hashed OTPs with TTL' is a gold standard for secure authentication flows that should be used in serious applications."
     ],
+
     futureEnhancements: [
-      "Adding SEO management features in the Admin Panel for better search engine visibility.",
-      "Implementing an analytics dashboard inside the Admin Panel to track views."
+      "User Interaction System: Adding a 'Like' and 'Comment' feature to every blog post to build a community and increase reader engagement."
     ]
   },
 {
