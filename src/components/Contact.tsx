@@ -5,13 +5,11 @@ import { motion } from 'framer-motion';
 import { Mail, Github, Linkedin, ArrowUpRight, User, AtSign, MessageSquare } from 'lucide-react';
 import { GlobeDemo } from './Globe'; 
 
-// 1. EXTRACTED & MEMOIZED LEFT PANEL
-// This prevents the globe from re-rendering when you type in the form
 const GlobePanel = memo(() => {
   return (
     <div className="lg:col-span-2 bg-gradient-to-b from-[#0a0a0a] to-black relative overflow-hidden flex flex-col justify-between border-b lg:border-b-0 lg:border-r border-white/5 p-8 h-full min-h-[400px]">
         
-        {/* Header Content */}
+        {}
         <div className="relative z-20">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-mono mb-3">
                 <span className="relative flex h-2 w-2">
@@ -23,27 +21,26 @@ const GlobePanel = memo(() => {
             <h3 className="text-white font-bold text-2xl tracking-tight leading-tight">Worldwide<br/>Connection</h3>
         </div>
 
-        {/* The Globe Container */}
+        {}
         <div className="absolute inset-0 flex items-center justify-center z-10 mt-10 lg:mt-0">
              <div className="w-full h-full transform scale-[0.85] lg:scale-[0.95] translate-y-4">
                 <GlobeDemo />
              </div>
         </div>
 
-        {/* Socials */}
+        {}
         <div className="relative z-20 flex gap-3 mt-auto pt-8">
            <SocialButton href="https://github.com/Sauravsingh1719" icon={<Github size={18} />} />
            <SocialButton href="https://www.linkedin.com/in/saurav-kumar-262219337" icon={<Linkedin size={18} />} />
            <SocialButton href="mailto:Sauravs1719@gmail.com" icon={<Mail size={18} />} />
         </div>
         
-        {/* Gradient Fade */}
+        {}
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black to-transparent pointer-events-none z-10" />
     </div>
   );
 });
 
-// Display name for debugging
 GlobePanel.displayName = 'GlobePanel';
 
 
@@ -58,7 +55,6 @@ export default function ContactPage() {
     if (!formData.name || !formData.email || !formData.message) return;
     setLoading(true);
     try {
-        // Simulate API call
         await new Promise(resolve => setTimeout(resolve, 1500));
         setFormData({ name: "", email: "", message: "" });
         setSubmitted(true);
@@ -75,12 +71,12 @@ export default function ContactPage() {
   return (
     <section id="contact" className="py-20 bg-[#050505] relative flex items-center justify-center overflow-hidden">
       
-      {/* Background Ambience */}
+      {}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-blue-600/20 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10 max-w-5xl">
         
-        {/* THE MAIN CARD CHASSIS */}
+        {}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -88,10 +84,10 @@ export default function ContactPage() {
           className="bg-black/40 backdrop-blur-2xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-5 min-h-[500px]"
         >
             
-            {/* 2. USE THE MEMOIZED COMPONENT HERE */}
+            {}
             <GlobePanel />
 
-            {/* --- RIGHT SIDE: THE FORM (Dynamic) --- */}
+            {}
             <div className="lg:col-span-3 p-8 lg:p-12 flex flex-col justify-center bg-black/20">
                 
                 <div className="mb-8">

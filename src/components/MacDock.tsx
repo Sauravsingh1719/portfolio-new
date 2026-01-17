@@ -6,13 +6,12 @@ import { motion, useMotionValue, useSpring, useTransform, MotionValue, AnimatePr
 import { 
   Home, 
   FolderGit2, 
-  Cpu, // For Skills
-  PenTool, // For Writings
+  Cpu,
+  PenTool,
   Mail 
 } from 'lucide-react';
-import { cn } from '@/lib/utils'; // Assuming you have a cn utility, or remove and use template literals
+import { cn } from '@/lib/utils';
 
-// 1. Configuration: Your Menu Items
 const DATA = [
   { title: 'Home', icon: Home, href: '/' },
   { title: 'Projects', icon: FolderGit2, href: '/#projects' },
@@ -52,23 +51,18 @@ function DockIcon({
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
-  // 2. The Math: Calculate distance from mouse to icon center
   const distance = useTransform(mouseX, (val) => {
     const bounds = ref.current?.getBoundingClientRect() ?? { x: 0, width: 0 };
     return val - bounds.x - bounds.width / 2;
   });
 
-  // 3. The Transformation: Map distance to width/height
-  // When mouse is close (0px), size is 80px. When far (150px), size is 40px.
   const widthTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
   const heightTransform = useTransform(distance, [-150, 0, 150], [40, 80, 40]);
 
-  // 4. The Spring: Make it bouncy and smooth
   const width = useSpring(widthTransform, { mass: 0.1, stiffness: 150, damping: 12 });
   const height = useSpring(heightTransform, { mass: 0.1, stiffness: 150, damping: 12 });
 
-  // 5. Icon Size Logic: Icon grows relative to the container
-  const iconScale = useTransform(distance, [-150, 0, 150], [1, 1.5, 1]); // Icon scales up 1.5x
+  const iconScale = useTransform(distance, [-150, 0, 150], [1, 1.5, 1]);
   const scaleSpring = useSpring(iconScale, { mass: 0.1, stiffness: 150, damping: 12 });
 
   const [hovered, setHovered] = React.useState(false);
@@ -82,7 +76,7 @@ function DockIcon({
         onMouseLeave={() => setHovered(false)}
         className="aspect-square rounded-full bg-gray-800/80 border border-white/10 flex items-center justify-center relative shadow-lg shadow-black/40 hover:bg-gray-700/80 transition-colors"
       >
-        {/* Tooltip (Title) */}
+        {}
         <AnimatePresence>
           {hovered && (
             <motion.div
@@ -96,7 +90,7 @@ function DockIcon({
           )}
         </AnimatePresence>
 
-        {/* Icon */}
+        {}
         <motion.div style={{ scale: scaleSpring }}>
           <Icon className="h-5 w-5 text-white" />
         </motion.div>
