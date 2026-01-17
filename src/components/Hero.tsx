@@ -91,7 +91,7 @@ const Hero = () => {
               </Link>
               
               <a
-                href="/SAURAV_CV.pdf"
+                href="/resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 rounded-full border border-white/20 bg-white/5 text-white font-medium hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm hover:-translate-y-1"
