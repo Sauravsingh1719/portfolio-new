@@ -54,11 +54,87 @@ const Hero = () => {
               variants={fadeInUp} 
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium mb-8 backdrop-blur-md"
             >
+<<<<<<< HEAD
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
               Available for Global Projects
+=======
+              <div className="space-y-8">
+                {}
+                <motion.div
+                  className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800 border border-gray-700"
+                  variants={fadeInUp}
+                >
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
+                  <span className="text-sm font-medium">Full Stack Developer</span>
+                </motion.div>
+
+                {}
+                <motion.h1
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+                  variants={fadeInUp}
+                >
+                  Transforming Ideas <br />
+                  Into{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
+                    Digital Reality
+                  </span>
+                </motion.h1>
+
+                {}
+                <motion.p
+                  className="text-xl text-gray-300 max-w-2xl leading-relaxed"
+                  variants={fadeInUp}
+                >
+                  I'm Saurav, a passionate full-stack developer specializing in building exceptional web applications
+                  with Next.js, React, and modern web technologies. I turn complex ideas into seamless digital experiences.
+                </motion.p>
+
+                {}
+                <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeInUp}>
+                  <Link
+                    href="#projects"
+                    className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:-translate-y-1"
+                  >
+                    View My Work
+                    <ArrowDown className="ml-2 h-5 w-5" />
+                  </Link>
+
+                  <div className="flex gap-4">
+                    {}
+                    <a
+                      href="/resume"
+                      className="inline-flex items-center justify-center px-6 py-3.5 bg-gray-800 border border-gray-700 rounded-lg font-medium hover:bg-gray-700 transition-all duration-300"
+                    >
+                      <Download className="mr-2 h-5 w-5" />
+                      View CV
+                    </a>
+
+                    <Link
+                      href="#contact"
+                      className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent border border-gray-700 rounded-lg font-medium hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
+                    >
+                      <Mail className="mr-2 h-5 w-5" />
+                      Contact Me
+                    </Link>
+                  </div>
+                </motion.div>
+
+                {}
+                <motion.div className="flex gap-8 pt-4" variants={fadeInUp}>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-400">15+</div>
+                    <div className="text-gray-400 text-sm">Projects</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-400">9+</div>
+                    <div className="text-gray-400 text-sm">Technologies</div>
+                  </div>
+                </motion.div>
+              </div>
+>>>>>>> 9a21eb12945b6b3b400d1b75a0fe477e9978676e
             </motion.div>
 
             {}
