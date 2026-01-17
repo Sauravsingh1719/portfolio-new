@@ -123,7 +123,7 @@ const Hero = () => {
                  <div className="relative w-[300px] md:w-[340px] aspect-[3/4] rounded-[30px] overflow-hidden border border-white/10 shadow-2xl group bg-[#111]">
                    
                    <Image
-                     src="/images/profile.png" 
+                     src="/images/profile.jpg" 
                      alt="Saurav Profile"
                      fill
                      className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
