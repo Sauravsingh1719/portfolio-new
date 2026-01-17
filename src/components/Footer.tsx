@@ -20,7 +20,7 @@ export default function Footer() {
     },
     {
       name: "Instagram",
-      url: "https://instagram.com/yourusername",
+      url: "https://www.instagram.com/saurav.singh19__/",
       icon: <Instagram className="w-5 h-5" />,
     },
   ];
