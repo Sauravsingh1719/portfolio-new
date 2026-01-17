@@ -4,198 +4,172 @@ import React from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowDown, Download, Mail } from 'lucide-react';
-import { GlobeDemo } from './Globe';
+import { ArrowRight, Github, Linkedin, Mail, FileText, Download } from 'lucide-react';
+import { CometCard } from '@/components/ui/comet-card'; 
+import { Spotlight } from './ui/Spotlight';
 
 const fadeInUp = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 30 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: 'easeOut',
-    },
-  },
-};
-
-const staggerChildren = {
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-    },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
   },
 };
 
 const Hero = () => {
   return (
-    <div>
-      <section className="min-h-screen text-white flex items-center justify-center relative overflow-hidden ">
-        {}
-        <div className="hidden md:block absolute inset-y-0 right-0 w-1/3 lg:w-2/5 z-0 pointer-events-none">
+    <div className="min-h-screen w-full flex items-center justify-center bg-[#050505] relative overflow-hidden pt-20 lg:pt-0">
+      
+      {}
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+
+      {}
+      <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center leading-none pointer-events-none z-0 select-none opacity-[0.04]">
+         <h1 className="text-[12vw] font-bold text-center text-white tracking-tighter uppercase whitespace-nowrap">
+            FULL STACK
+         </h1>
+         <h1 className="text-[12vw] font-bold text-center text-white tracking-tighter uppercase whitespace-nowrap">
+            ENGINEER
+         </h1>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10 w-full h-full pb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center h-full">
+          
           {}
-          <div className="relative w-full h-full">
-            <Image
-              src="/images/profile.png"
-              alt="Saurav profile"
-              fill
-              style={{ objectFit: 'cover', objectPosition: 'right center' }}
-              priority={false}
-            />
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{
+              visible: { transition: { staggerChildren: 0.1 } },
+            }}
+            className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left pt-12 lg:pt-0"
+          >
             {}
-            <div className="absolute inset-0 bg-gradient-to-l from-black/95 to-transparent" />
-          </div>
-        </div>
-
-        {}
-        <div className="absolute inset-0 bg-grid-pattern opacity-10 z-0"></div>
-
-        {}
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl z-0"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.5, 0.8, 0.5],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-
-        <motion.div
-          className="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl z-0"
-          animate={{
-            scale: [1, 1.1, 1],
-            opacity: [0.3, 0.6, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-            delay: 2,
-          }}
-        />
-
-        {}
-        <div className="container mx-auto px-4 relative z-10 h-full flex items-center">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
-            {}
-            <motion.div
-              className="flex flex-col justify-center"
-              variants={staggerChildren}
-              initial="hidden"
-              animate="visible"
+            <motion.div 
+              variants={fadeInUp} 
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium mb-8 backdrop-blur-md"
             >
-              <div className="space-y-8">
-                {}
-                <motion.div
-                  className="inline-flex items-center px-4 py-2 rounded-full bg-gray-800 border border-gray-700"
-                  variants={fadeInUp}
-                >
-                  <div className="w-2 h-2 bg-blue-500 rounded-full mr-2 animate-pulse" />
-                  <span className="text-sm font-medium">Full Stack Developer</span>
-                </motion.div>
-
-                {}
-                <motion.h1
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
-                  variants={fadeInUp}
-                >
-                  Transforming Ideas <br />
-                  Into{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">
-                    Digital Reality
-                  </span>
-                </motion.h1>
-
-                {}
-                <motion.p
-                  className="text-xl text-gray-300 max-w-2xl leading-relaxed"
-                  variants={fadeInUp}
-                >
-                  I'm Saurav, a passionate full-stack developer specializing in building exceptional web applications
-                  with Next.js, React, and modern web technologies. I turn complex ideas into seamless digital experiences.
-                </motion.p>
-
-                {}
-                <motion.div className="flex flex-col sm:flex-row gap-4" variants={fadeInUp}>
-                  <Link
-                    href="#projects"
-                    className="inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg font-medium hover:from-blue-500 hover:to-purple-500 transition-all duration-300 transform hover:-translate-y-1"
-                  >
-                    View My Work
-                    <ArrowDown className="ml-2 h-5 w-5" />
-                  </Link>
-
-                  <div className="flex gap-4">
-                    {}
-                    <a
-                      href="/SAURAV_CV.pdf"
-                      download
-                      className="inline-flex items-center justify-center px-6 py-3.5 bg-gray-800 border border-gray-700 rounded-lg font-medium hover:bg-gray-700 transition-all duration-300"
-                    >
-                      <Download className="mr-2 h-5 w-5" />
-                      Download CV
-                    </a>
-
-                    <Link
-                      href="#contact"
-                      className="inline-flex items-center justify-center px-6 py-3.5 bg-transparent border border-gray-700 rounded-lg font-medium hover:border-blue-500 hover:text-blue-400 transition-all duration-300"
-                    >
-                      <Mail className="mr-2 h-5 w-5" />
-                      Contact Me
-                    </Link>
-                  </div>
-                </motion.div>
-
-                {}
-                <motion.div className="flex gap-8 pt-4" variants={fadeInUp}>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-blue-400">15+</div>
-                    <div className="text-gray-400 text-sm">Projects</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-400">9+</div>
-                    <div className="text-gray-400 text-sm">Technologies</div>
-                  </div>
-                </motion.div>
-              </div>
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Available for Global Projects
             </motion.div>
 
             {}
-            <motion.div
-              className="flex items-center justify-center h-full"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.7, duration: 0.8 }}
+            <motion.h1 
+              variants={fadeInUp}
+              className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
             >
-              <div className="w-full h-[400px] lg:h-[500px] flex items-center justify-center">
-                <GlobeDemo />
-              </div>
-            </motion.div>
-          </div>
-        </div>
+              Architecting <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-blue-400 animate-gradient-x">
+                Scalable Solutions.
+              </span>
+            </motion.h1>
 
-        {}
-        <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.5, duration: 0.8 }}
-        >
-          <div className="w-6 h-10 border-2 border-gray-600 rounded-full flex justify-center">
-            <motion.div
-              animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
-            />
-          </div>
-        </motion.div>
-      </section>
+            {}
+            <motion.p 
+              variants={fadeInUp}
+              className="text-lg md:text-xl text-neutral-400 max-w-xl leading-relaxed mb-10"
+            >
+              I am <span className="text-white font-semibold">Saurav</span>, a Full Stack Engineer dedicated to building robust, high-performance web applications. I specialize in the Next.js ecosystem to deliver pixel-perfect, accessible, and efficient digital products.
+            </motion.p>
+
+            {}
+            <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full sm:w-auto">
+              
+              <Link
+                href="#projects"
+                className="px-8 py-3.5 rounded-full bg-white text-black font-bold hover:bg-neutral-200 transition-all duration-300 flex items-center gap-2 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] hover:-translate-y-1"
+              >
+                View Selected Work <ArrowRight size={18} />
+              </Link>
+              
+              <a
+                href="/SAURAV_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3.5 rounded-full border border-white/20 bg-white/5 text-white font-medium hover:bg-white/10 hover:border-white/40 transition-all duration-300 flex items-center gap-2 backdrop-blur-sm hover:-translate-y-1"
+              >
+                <FileText size={18} /> Resume
+              </a>
+
+              <Link
+                href="#contact"
+                className="px-8 py-3.5 rounded-full border border-transparent text-neutral-400 font-medium hover:text-white transition-all duration-300 flex items-center"
+              >
+                Contact
+              </Link>
+
+            </motion.div>
+          </motion.div>
+
+          {}
+          <motion.div 
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, delay: 0.2, type: "spring" }}
+            className="lg:col-span-5 flex justify-center lg:justify-end relative pb-10 lg:pb-0"
+          >
+            {}
+
+            <div className="relative z-10">
+               <CometCard>
+                 <div className="relative w-[300px] md:w-[340px] aspect-[3/4] rounded-[30px] overflow-hidden border border-white/10 shadow-2xl group bg-[#111]">
+                   
+                   <Image
+                     src="/images/profile.jpg" 
+                     alt="Saurav Profile"
+                     fill
+                     className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                     priority
+                   />
+                   
+                   {}
+
+                   {}
+                   <div className="absolute top-5 right-5 flex flex-col gap-3 z-20">
+                     <SocialButton href="https://github.com/Sauravsingh1719" icon={<Github size={20} />} label="GitHub" />
+                     <SocialButton href="https://www.linkedin.com/in/saurav-kumar-262219337" icon={<Linkedin size={20} />} label="LinkedIn" />
+                     <SocialButton href="mailto:Sauravs1719@gmail.com" icon={<Mail size={20} />} label="Email" />
+                   </div>
+                   
+                   {}
+                   <a 
+                     href="/SAURAV_CV.pdf" 
+                     download
+                     className="absolute bottom-5 right-5 w-10 h-10 bg-black/40 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300"
+                     title="Download Resume"
+                   >
+                      <Download size={18} />
+                   </a>
+
+                 </div>
+               </CometCard>
+            </div>
+          </motion.div>
+
+        </div>
+      </div>
     </div>
   );
 };
+
+const SocialButton = ({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) => (
+  <a 
+    href={href}
+    target="_blank"
+    rel="noreferrer"
+    className="w-12 h-12 bg-black/30 backdrop-blur-xl border border-white/10 rounded-full flex items-center justify-center text-white/90 hover:text-white hover:bg-blue-600 hover:border-blue-500 transition-all duration-300 transform hover:scale-110 shadow-lg group relative"
+  >
+    {icon}
+    <span className="sr-only">{label}</span>
+  </a>
+);
 
 export default Hero;

@@ -1,95 +1,135 @@
+'use client';
+
+import React from 'react';
 import Link from 'next/link';
+import { Github, Linkedin, Instagram, ArrowUpRight } from 'lucide-react';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  
+
   const socialLinks = [
     {
       name: "GitHub",
-      image: "/images/github.png",
       url: "https://github.com/Sauravsingh1719",
+      icon: <Github className="w-5 h-5" />,
     },
     {
       name: "LinkedIn",
-      image: "/images/linkedin.png",
       url: "https://www.linkedin.com/in/saurav-kumar-262219337/",
+      icon: <Linkedin className="w-5 h-5" />,
     },
     {
       name: "Instagram",
-      image: "/images/instagram.jpg",
       url: "https://instagram.com/yourusername",
+      icon: <Instagram className="w-5 h-5" />,
     },
   ];
 
   const quickLinks = [
     { name: "Projects", href: "#projects" },
+    { name: "Skills", href: "#skills" },
     { name: "Writings", href: "#writings" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <footer className="bg-black  border-t border-gray-800 py-8">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          {/* Logo and copyright */}
-          <div className="mb-6 md:mb-0">
-            <div className="flex items-center">
-              <span className="text-2xl font-bold text-white">
-               <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 to-purple-500">Saurav</span>
-              </span>
-            </div>
-            <p className="text-gray-400 text-sm mt-2">
-              © {currentYear}  All rights reserved.
+    <footer className="bg-[#050505] border-t border-white/10 pt-20 pb-10 relative overflow-hidden">
+      
+      {}
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
+          
+          {}
+          <div className="lg:col-span-2">
+            <Link href="/" className="text-2xl font-bold text-white mb-4 inline-block">
+               Saurav<span className="text-blue-500">.</span>
+            </Link>
+            <p className="text-neutral-400 max-w-sm mt-4 text-sm leading-relaxed">
+              Full Stack Web Developer building the future of the web, one pixel at a time. 
+              Always focused on performance, accessibility, and clean design.
             </p>
           </div>
 
-          {/* Quick links */}
-          <div className="mb-6 md:mb-0">
-            <div className="flex flex-wrap justify-center gap-6">
+          {}
+          <div>
+            <h3 className="text-white font-bold mb-6">Navigation</h3>
+            <ul className="space-y-4">
               {quickLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className="text-gray-400 hover:text-white transition-colors text-sm"
-                >
-                  {link.name}
-                </Link>
+                <li key={link.name}>
+                  <Link 
+                    href={link.href}
+                    className="text-neutral-400 hover:text-blue-400 transition-colors text-sm flex items-center gap-1 group"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
 
-          {/* Social links */}
-          <div className="flex space-x-4">
-            {socialLinks.map((social) => (
-              <a
-                key={social.name}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 p-2 rounded-full hover:bg-gray-700 transition-colors"
-                aria-label={social.name}
-              >
-                <img 
-                  src={social.image} 
-                  alt={social.name} 
-                  className="h-5 w-5" 
-                />
-              </a>
-            ))}
+          {}
+          <div>
+            <h3 className="text-white font-bold mb-6">Connect</h3>
+            <ul className="space-y-4">
+              {socialLinks.map((social) => (
+                <li key={social.name}>
+                  <a 
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-neutral-400 hover:text-white transition-colors text-sm flex items-center gap-2 group"
+                  >
+                    <span className="bg-white/5 p-2 rounded-full group-hover:bg-blue-500 group-hover:text-white transition-all">
+                        {social.icon}
+                    </span>
+                    {social.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
+
         </div>
 
-        {/* Bottom text with acknowledgments */}
-        <div className="text-center mt-8 pt-6 border-t border-gray-800">
-          <p className="text-gray-500 text-xs mb-2">
-            Designed and built with ❤️ using Next.js and Tailwind CSS
-          </p>
-          <p className="text-gray-600 text-xs">
-            Special thanks to <a href="https://ui.aceternity.com" target="_blank" rel="noopener" className="hover:text-gray-400">Aceternity UI</a> and 
-            {' '}<a href="https://reactbits.dev" target="_blank" rel="noopener" className="hover:text-gray-400">React Bits</a> for inspiration and components
-          </p>
+        {}
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+           
+           <div className="text-center md:text-left">
+              <p className="text-neutral-500 text-xs">
+                 © {currentYear} Saurav. All rights reserved.
+              </p>
+              <div className="flex flex-wrap gap-4 mt-2 justify-center md:justify-start">
+                  <p className="text-neutral-600 text-[10px]">
+                    Built with Next.js & Tailwind
+                  </p>
+                  <p className="text-neutral-600 text-[10px]">
+                    Inspired by Aceternity UI
+                  </p>
+              </div>
+           </div>
+
+           <div className="flex items-center gap-2">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              </span>
+              <span className="text-neutral-400 text-xs font-mono">
+                System Status: Online
+              </span>
+           </div>
+
         </div>
       </div>
+
+      {}
+      {}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full overflow-hidden pointer-events-none opacity-[0.05] z-0 flex justify-center">
+         <h1 className="text-[23vw] md:text-[14vw] font-bold text-center text-white leading-none tracking-tighter select-none whitespace-nowrap">
+            SAURAV
+         </h1>
+      </div>
+
     </footer>
   );
 }
