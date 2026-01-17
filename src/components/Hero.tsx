@@ -21,13 +21,13 @@ const Hero = () => {
   return (
     <div className="min-h-screen w-full flex items-center justify-center bg-[#050505] relative overflow-hidden pt-20 lg:pt-0">
       
-      {/* 1. PROFESSIONAL SPOTLIGHT */}
+      {}
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
       />
 
-      {/* 2. BACKGROUND TEXT */}
+      {}
       <div className="absolute top-[55%] left-1/2 -translate-x-1/2 -translate-y-1/2 w-full flex flex-col items-center justify-center leading-none pointer-events-none z-0 select-none opacity-[0.04]">
          <h1 className="text-[12vw] font-bold text-center text-white tracking-tighter uppercase whitespace-nowrap">
             FULL STACK
@@ -40,7 +40,7 @@ const Hero = () => {
       <div className="container mx-auto px-6 relative z-10 w-full h-full pb-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center h-full">
           
-          {/* --- LEFT SIDE: TEXT CONTENT --- */}
+          {}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -49,7 +49,7 @@ const Hero = () => {
             }}
             className="lg:col-span-7 flex flex-col items-center lg:items-start text-center lg:text-left pt-12 lg:pt-0"
           >
-            {/* Badge - More Professional Wording */}
+            {}
             <motion.div 
               variants={fadeInUp} 
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-500/20 bg-blue-500/5 text-blue-400 text-sm font-medium mb-8 backdrop-blur-md"
@@ -61,7 +61,7 @@ const Hero = () => {
               Available for Global Projects
             </motion.div>
 
-            {/* Headline - Stronger Verbs */}
+            {}
             <motion.h1 
               variants={fadeInUp}
               className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-6 leading-[1.1]"
@@ -72,7 +72,7 @@ const Hero = () => {
               </span>
             </motion.h1>
 
-            {/* Subtext - Focus on Engineering & Tech Stack */}
+            {}
             <motion.p 
               variants={fadeInUp}
               className="text-lg md:text-xl text-neutral-400 max-w-xl leading-relaxed mb-10"
@@ -80,7 +80,7 @@ const Hero = () => {
               I am <span className="text-white font-semibold">Saurav</span>, a Full Stack Engineer dedicated to building robust, high-performance web applications. I specialize in the Next.js ecosystem to deliver pixel-perfect, accessible, and efficient digital products.
             </motion.p>
 
-            {/* Buttons */}
+            {}
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4 justify-center lg:justify-start w-full sm:w-auto">
               
               <Link
@@ -109,14 +109,14 @@ const Hero = () => {
             </motion.div>
           </motion.div>
 
-          {/* --- RIGHT SIDE: IMAGE CARD --- */}
+          {}
           <motion.div 
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.2, type: "spring" }}
             className="lg:col-span-5 flex justify-center lg:justify-end relative pb-10 lg:pb-0"
           >
-            {/* Glow Removed as requested previously */}
+            {}
 
             <div className="relative z-10">
                <CometCard>
@@ -130,16 +130,16 @@ const Hero = () => {
                      priority
                    />
                    
-                   {/* Overlay Removed as requested previously */}
+                   {}
 
-                   {/* Floating Socials */}
+                   {}
                    <div className="absolute top-5 right-5 flex flex-col gap-3 z-20">
                      <SocialButton href="https://github.com/Sauravsingh1719" icon={<Github size={20} />} label="GitHub" />
                      <SocialButton href="https://www.linkedin.com/in/saurav-kumar-262219337" icon={<Linkedin size={20} />} label="LinkedIn" />
                      <SocialButton href="mailto:Sauravs1719@gmail.com" icon={<Mail size={20} />} label="Email" />
                    </div>
                    
-                   {/* Resume Download Icon */}
+                   {}
                    <a 
                      href="/SAURAV_CV.pdf" 
                      download
