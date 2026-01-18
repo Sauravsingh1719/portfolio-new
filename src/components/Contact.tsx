@@ -50,19 +50,41 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-    setLoading(true);
-    try {
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        setFormData({ name: "", email: "", message: "" });
-        setSubmitted(true);
-        setTimeout(() => setSubmitted(false), 3000);
-    } finally {
-      setLoading(false);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+
+  if (!formData.name || !formData.email || !formData.message) return;
+
+  setLoading(true);
+
+  try {
+    const res = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+      }),
+    });
+
+    if (!res.ok) {
+      throw new Error('Failed to send message');
     }
-  };
+
+    setFormData({ name: '', email: '', message: '' });
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 3000);
+  } catch (error) {
+    console.error(error);
+    alert('Something went wrong. Please try again.');
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
