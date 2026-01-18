@@ -50,40 +50,34 @@ export default function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   const [focusedField, setFocusedField] = useState<string | null>(null);
 
- const handleSubmit = async (e: React.FormEvent) => {
+ const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
 
   if (!formData.name || !formData.email || !formData.message) return;
 
-  setLoading(true);
+  setSubmitted(true);
 
-  try {
-    const res = await fetch('/api/send-email', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: formData.name,
-        email: formData.email,
-        message: formData.message,
-      }),
-    });
+  const payload = {
+    name: formData.name,
+    email: formData.email,
+    message: formData.message,
+  };
 
-    if (!res.ok) {
-      throw new Error('Failed to send message');
-    }
+  setFormData({ name: '', email: '', message: '' });
 
-    setFormData({ name: '', email: '', message: '' });
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-  } catch (error) {
-    console.error(error);
-    alert('Something went wrong. Please try again.');
-  } finally {
-    setLoading(false);
-  }
+  fetch('/api/send-email', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  }).catch((error) => {
+    console.error('Email sending failed:', error);
+  });
+
+  setTimeout(() => setSubmitted(false), 3000);
 };
+
 
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
