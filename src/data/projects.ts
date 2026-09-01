@@ -20,6 +20,315 @@ export interface ProjectCaseStudy {
 }
 
 export const projectCaseStudies: ProjectCaseStudy[] = [
+    {
+  id: "royal-invites",
+  title: "RoyalInvites — Personalized Cinematic Wedding Invitations",
+  liveUrl: "https://royalinvitess.vercel.app/",
+  githubUrl: "https://github.com/Sauravsingh1719/royal-invite.git",
+  image: "/images/royalinvites.png",
+
+  description:
+    "A full-stack SaaS platform that transforms traditional digital wedding invitations into personalized, cinematic web experiences. RoyalInvites allows hosts to create beautiful wedding invitation portals, add multiple ceremonies, personalize invitations for individual guests, share them through WhatsApp, and provide guests with an immersive invitation experience.",
+
+  technologies: [
+    "Next.js 16",
+    "TypeScript",
+    "Tailwind CSS",
+    "Framer Motion",
+    "MongoDB Atlas",
+    "Mongoose",
+    "NextAuth.js",
+    "bcrypt",
+    "Cloudinary",
+    "Browser Image Compression",
+    "Google Gemini"
+  ],
+
+  completedDate: "2026",
+  duration: "Rapid Development",
+  role: "Full Stack Developer & Product Builder",
+
+  problem:
+    "Traditional digital wedding invitations are usually limited to static PDFs, Canva images, or generic WhatsApp messages. While these formats are convenient, they often lose the emotion and cultural richness of a real wedding invitation. Guests may also have to search through long documents to find ceremony timings, venue information, or navigation links. Another major limitation is personalization: the same invitation is commonly forwarded to everyone without a personal greeting or message. I wanted to create something that could retain the convenience of digital sharing while making the experience feel personal, interactive, and memorable.",
+
+  solution:
+    "I built RoyalInvites as a full-stack platform where wedding hosts can create their own personalized invitation experience without writing code. Instead of sending a static document, hosts can create an interactive wedding portal with cinematic templates, a wax-sealed envelope opening experience, background music, multiple ceremony schedules, venue navigation, personalized guest links, custom messages, and WhatsApp sharing. The platform combines a guest-facing immersive experience with a creator dashboard for managing wedding information, media, and invitation links.",
+
+  features: [
+    {
+      title: "Interactive Wax-Seal Unboxing",
+      description:
+        "Every invitation can begin with an interactive digital envelope sealed with a traditional wax stamp. Guests tap the seal to trigger a Framer Motion animation that opens the invitation and transitions into the main experience. The interaction also provides a natural user gesture for starting background audio on mobile browsers where automatic audio playback is restricted."
+    },
+
+    {
+      title: "Personalized Guest Invitations",
+      description:
+        "Hosts can generate unique invitation links for individual guests. A link can contain the guest's name, family designation, personalized message, and optional sign-off, allowing the invitation to greet guests personally instead of displaying a generic message."
+    },
+
+    {
+      title: "Stateless Guest Personalization",
+      description:
+        "Guest-specific invitation information is encoded into the invitation URL rather than requiring a separate database record for every recipient. The invitation decodes the payload at runtime and renders the appropriate greeting and personal message. This keeps the guest-link system lightweight and avoids maintaining a large guest-message collection."
+    },
+
+    {
+      title: "Multiple Cinematic Templates",
+      description:
+        "RoyalInvites includes multiple invitation experiences designed around different visual styles, including royal heritage, cinematic storytelling, dark royal aesthetics, and floral designs. Each template has its own animations, typography, layouts, decorative elements, and interaction patterns while following a common invitation data structure."
+    },
+
+    {
+      title: "Bride & Groom Display Priority",
+      description:
+        "Hosts can choose whether the Bride's side or Groom's side should appear first. This preference affects the ordering of couple information, family details, visual cards, and other parts of the invitation experience."
+    },
+
+    {
+      title: "Multi-Ceremony Wedding Timeline",
+      description:
+        "Indian weddings often involve multiple ceremonies across several days. Hosts can add events such as Haldi, Mehendi, Sangeet, Phere, Reception, or custom ceremonies with individual dates, times, venues, descriptions, and navigation links."
+    },
+
+    {
+      title: "Direct Venue Navigation",
+      description:
+        "Each ceremony can include a Google Maps location link. Guests can open the location directly from the invitation and continue to native map navigation on their mobile device instead of manually searching for the venue."
+    },
+
+    {
+      title: "One-Click WhatsApp Sharing",
+      description:
+        "The platform generates ready-to-share WhatsApp messages containing the appropriate invitation greeting, wedding information, and invitation link. Master invitation links use a general family-and-friends greeting, while individual guest links use the guest's personalized details."
+    },
+
+    {
+      title: "Smart Event Creation",
+      description:
+        "To reduce repetitive work for non-technical users, the builder includes quick-add presets for common Indian wedding ceremonies and a 'Same as Wedding Venue' option that allows venue information to be reused across multiple events."
+    },
+
+    {
+      title: "Client-Side Image Optimization",
+      description:
+        "Wedding photographs taken on modern smartphones can be very large. Before uploading images to the cloud, the application compresses and resizes them in the browser, reducing unnecessary upload time and cloud storage usage while maintaining suitable visual quality."
+    },
+
+    {
+      title: "Automated Cloud Media Management",
+      description:
+        "Wedding images are stored through Cloudinary. When a host replaces an image or deletes an invitation, the corresponding Cloudinary asset can also be removed, helping prevent orphaned media files and unnecessary storage usage."
+    },
+
+    {
+      title: "Authentication & Account Management",
+      description:
+        "The platform includes account creation, authentication, password hashing, OTP-based verification, session management, and account-level controls. Users can manage their wedding invitations from a dedicated dashboard."
+    },
+
+    {
+      title: "Privacy & Data Controls",
+      description:
+        "Because wedding invitations contain personal photographs and guest information, privacy was considered throughout the product. The platform includes a dedicated Privacy Policy, consent messaging, account deletion capabilities, and media cleanup when associated content is removed."
+    },
+
+    {
+      title: "Admin Management Panel",
+      description:
+        "An administrative interface provides visibility into registered users and invitation records, including account creation and deletion management. This gives the platform owner a centralized way to maintain the application's data."
+    }
+  ],
+
+  process: [
+    {
+      title: "Starting With a Real Family Problem",
+      description:
+        "The project started with a simple question: how could I invite guests to my sister's upcoming wedding in a way that felt more personal than sending a PDF or image through WhatsApp? Instead of treating the invitation as a document, I explored the idea of turning it into an interactive digital experience."
+    },
+
+    {
+      title: "Defining the Product Experience",
+      description:
+        "I mapped the experience from both sides of the platform. Hosts needed a simple builder for wedding information, ceremonies, media, and guest links, while guests needed an experience that was visually engaging, easy to navigate, mobile-friendly, and personalized."
+    },
+
+    {
+      title: "Designing the Invitation Architecture",
+      description:
+        "The application was structured around reusable wedding data and a template system. This allowed multiple visual invitation experiences to use the same underlying wedding information while maintaining their own layouts, animations, and presentation styles."
+    },
+
+    {
+      title: "Building the Interactive Experience",
+      description:
+        "Framer Motion was used to create the wax-seal opening sequence, scroll-based animations, transitions, visual effects, and interactive elements. Particular attention was given to mobile devices because wedding invitations are primarily shared through smartphones."
+    },
+
+    {
+      title: "Building the Creator Dashboard",
+      description:
+        "I created the host-side workflow for entering wedding information, adding ceremonies, uploading photographs, selecting templates, configuring bride/groom priority, and generating personalized guest links."
+    },
+
+    {
+      title: "Implementing Guest Personalization",
+      description:
+        "Instead of creating a database record for every individual invitation recipient, I designed a lightweight encoded URL payload system. Guest information is serialized into the invitation link and decoded by the invitation page when the guest opens it."
+    },
+
+    {
+      title: "Optimizing Media Handling",
+      description:
+        "Large smartphone photographs were optimized on the client before upload. Cloudinary was then used for cloud storage and delivery, with cleanup logic added to remove associated media when photos were replaced or invitations were deleted."
+    },
+
+    {
+      title: "Iterative AI-Assisted Development",
+      description:
+        "Google Gemini was used throughout development as an engineering partner. I used it for implementation ideas, code generation, debugging, architecture discussions, edge-case analysis, and refactoring. The product direction, requirements, UX decisions, testing, review of generated code, and final implementation decisions remained under my direction."
+    },
+
+    {
+      title: "Testing Real-World Edge Cases",
+      description:
+        "The application was refined by testing situations such as duplicate wedding names, missing guest information, family suffix formatting, mobile image uploads, authentication flows, audio restrictions, invitation deletion, media replacement, and WhatsApp message generation."
+    }
+  ],
+
+  challenges: [
+    {
+      title: "Making a Digital Invitation Feel Physical",
+      description:
+        "A traditional wedding invitation has a physical opening moment that creates anticipation. A normal webpage does not provide that emotional transition, so simply displaying the invitation immediately felt too ordinary.",
+      solution:
+        "I created an interactive wax-sealed envelope that acts as the entry point to the invitation. The guest's interaction triggers the opening animation and transitions into the main experience. The interaction also solves the practical problem of starting audio after a user gesture on mobile browsers."
+    },
+
+    {
+      title: "Personalizing Hundreds of Invitations",
+      description:
+        "Creating a separate database record for every guest would add unnecessary storage and management complexity, especially when the main purpose is simply to personalize the greeting and message.",
+      solution:
+        "I implemented a stateless encoded guest payload in the invitation URL. The host can generate a link containing guest information, and the invitation decodes that information at runtime. This allows personalized invitations without maintaining a separate database document for every guest."
+    },
+
+    {
+      title: "Duplicate Wedding URL Slugs",
+      description:
+        "Two users may naturally choose the same couple names, resulting in identical URL slugs such as 'rahul-and-priya'. A simple unique database constraint would otherwise result in a failed invitation creation.",
+      solution:
+        "The backend checks for slug collisions during wedding creation. When a slug already exists, the system automatically generates a clean alternative by appending a short numeric identifier, allowing the invitation to be created without forcing the user to manually find another name."
+    },
+
+    {
+      title: "Handling Large Wedding Photographs",
+      description:
+        "Modern smartphone cameras can produce photographs that are several megabytes or more in size. Uploading these files directly increases upload time, bandwidth usage, and cloud storage consumption.",
+      solution:
+        "I added client-side image compression and resizing before upload. Images are processed in the browser and then sent to Cloudinary in a much smaller form while retaining appropriate quality for web presentation."
+    },
+
+    {
+      title: "Preventing Orphaned Cloud Media",
+      description:
+        "Replacing a wedding photograph or deleting an invitation can leave the previous Cloudinary asset behind if the storage layer is not updated as well.",
+      solution:
+        "I integrated Cloudinary deletion utilities into the image replacement and wedding deletion flows. When an associated asset is no longer needed, its Cloudinary public ID can be extracted and the corresponding media removed."
+    },
+
+    {
+      title: "Awkward Personalized WhatsApp Messages",
+      description:
+        "The initial sharing logic could produce incorrect greetings when a host shared the master invitation link or when a guest's family suffix was missing from the generated message.",
+      solution:
+        "I separated master-link and guest-link sharing behavior. Master links use a general greeting such as 'Dear Family & Friends', while personalized links construct the greeting from the guest name and family suffix stored in the invitation payload."
+    },
+
+    {
+      title: "Authentication Flow Friction",
+      description:
+        "The initial authentication experience required users to complete signup, verify an email OTP, and then go through a separate login process. This added unnecessary friction immediately after account creation.",
+      solution:
+        "The signup flow was redesigned as a continuous experience. After successful OTP verification, the application can authenticate the newly created account and route the user directly into the dashboard instead of requiring another manual login."
+    },
+
+    {
+      title: "Designing for Non-Technical Hosts",
+      description:
+        "Wedding hosts should not need technical knowledge to build an invitation. Repeatedly entering venue information, figuring out which ceremonies to add, and manually writing sharing messages can quickly become frustrating.",
+      solution:
+        "I added quick-add ceremony presets, venue reuse functionality, guided builder forms, image-processing feedback, personalized sharing actions, and clear authentication messaging to reduce unnecessary steps."
+    },
+
+    {
+      title: "Privacy Around Personal Wedding Data",
+      description:
+        "Wedding invitations contain personal photographs, family information, venue details, and guest-specific messages. These details required more consideration than a typical static portfolio website.",
+      solution:
+        "I added privacy disclosures and deletion controls, used password hashing and expiring verification codes, and implemented media cleanup when associated wedding data is deleted. The guest personalization system also avoids creating a centralized database address book for every recipient."
+    }
+  ],
+
+  results: [
+    {
+      title: "Invitation Experience",
+      value: "Interactive & Personalized"
+    },
+    {
+      title: "Guest Personalization",
+      value: "Unique Links"
+    },
+    {
+      title: "Wedding Events",
+      value: "Multi-Ceremony Support"
+    },
+    {
+      title: "Venue Access",
+      value: "Direct Map Navigation"
+    },
+    {
+      title: "Sharing",
+      value: "WhatsApp Ready"
+    },
+    {
+      title: "Media Pipeline",
+      value: "Compressed + Cloud Managed"
+    },
+    {
+      title: "Invitation Templates",
+      value: "4+ Experiences"
+    },
+    {
+      title: "Development Model",
+      value: "AI-Assisted Full Stack"
+    }
+  ],
+
+  learnings: [
+    "A real-world personal problem can be a powerful starting point for building a meaningful software product.",
+    "The best digital experiences often combine emotional design with practical utility rather than focusing exclusively on aesthetics.",
+    "Mobile-first thinking is essential for products that are distributed primarily through messaging platforms such as WhatsApp.",
+    "Browser restrictions can sometimes become part of the UX instead of simply being treated as technical limitations. The wax-seal interaction became both an emotional feature and the user gesture required to start audio.",
+    "Stateless encoded URLs can be useful for lightweight personalization when persistent storage for every recipient is unnecessary, but encoding should never be confused with encryption or security.",
+    "Cloud media management requires lifecycle thinking. Uploading an image is only one part of the problem; replacing and deleting that image should also clean up the associated cloud asset.",
+    "Small UX improvements such as 'Same as Wedding Venue', quick event presets, and pre-formatted WhatsApp messages can have a significant impact on how approachable a product feels to non-technical users.",
+    "AI-assisted development can dramatically accelerate implementation, but product quality still depends on human judgment, requirements, testing, debugging, and iteration.",
+    "Working with AI as an engineering partner changes the development workflow from simply writing code to continuously specifying, reviewing, testing, and refining software."
+  ],
+
+  futureEnhancements: [
+    "Interactive RSVP Tracking: Allow guests to confirm attendance directly from their personalized invitation and let hosts track responses from the dashboard.",
+    "Meal Preference Collection: Add optional RSVP fields for dietary requirements and meal preferences.",
+    "Custom Audio Uploads: Allow hosts to upload their own wedding songs, recordings, or family messages instead of relying only on preset audio.",
+    "Collaborative Multi-Host Access: Allow both families to manage the same wedding invitation from shared administrative accounts.",
+    "Multilingual Invitations: Add native invitation experiences in Hindi, Gujarati, Punjabi, Tamil, Bengali, and other Indian languages.",
+    "Guest Analytics: Provide privacy-conscious analytics such as invitation opens, ceremony interactions, and RSVP completion rates.",
+    "Scheduled Invitations: Allow hosts to prepare guest links in advance and schedule when invitations should become active.",
+    "Advanced Guest Management: Add optional guest groups, relationship categories, bulk link generation, and invitation status tracking.",
+    "More Interactive Wedding Experiences: Introduce additional interactions such as animated photo stories, family trees, countdown experiences, and personalized guest journeys."
+  ]
+},
    {
     id: "data-analyst-portfolio",
     title: "Senior Data Analyst Portfolio & Custom CMS",
